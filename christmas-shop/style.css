@@ -152,6 +152,7 @@ body {
 }
 
 .header__wrapper {
+  height: 64px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -168,12 +169,20 @@ body {
   flex-wrap: wrap;
 }
 
-.header__item{
-    padding: 18px 20px;
+.header__item {
+  padding: 18px 20px;
+  border-radius: 12px;
+}
+
+.header__item:hover {
+  background: #ff46467a; /* Фон при наведении */
+}
+
+.header__item:hover .header__link {
+  color: var(--primary); /* Цвет текста при наведении */
 }
 
 .header__link {
-  
   color: var(--dark);
   font-size: 12px;
   letter-spacing: 5%;
@@ -182,6 +191,60 @@ body {
   font-weight: bold;
 }
 
-.header__link:hover {
-  color: var(--primary);
+.hero {
+  height: 648px;
+  background-image: url(img/bg-ball.png), url(img/bg-snow.png);
+  background-color: var(--primary);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero__container {
+  max-width: 426px;
+  margin: 0 auto;
+  padding: 60px 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* margin: ; */
+}
+
+.hero__title, .hero__span {
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.hero__header {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 0.17em;
+}
+
+.hero__btn {
+  background: var(--dark);
+  padding: 20px 32px;
+  border-radius: 20px;
+  border: none;
+}
+
+.hero__btn-link {
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 15.6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
