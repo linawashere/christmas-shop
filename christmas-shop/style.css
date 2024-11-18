@@ -315,7 +315,6 @@ body {
 
 .about__img img {
   border-radius: 20px;
-  height: 100%;
   max-width: 638px;
 }
 
@@ -561,8 +560,11 @@ body {
   flex-direction: column;
 }
 
+.cta__timer-header{
+  text-align: center;
+}
+
 .separator {
-  width: 20px;
   border-right: 1px solid #ffffff;
 }
 
