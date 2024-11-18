@@ -221,7 +221,8 @@ body {
 
 .hero__title,
 .hero__span,
-.about__text-title {
+.about__text-title,
+.slider__text-title {
   font-family: "Allura", cursive;
   font-weight: 400;
   line-height: 24px;
@@ -306,6 +307,97 @@ body {
   flex: 1;
 }
 
-.about__img img{
+.about__img img {
   border-radius: 20px;
 }
+
+.slider {
+  padding: 60px 8px;
+  height: 488px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.slider__text {
+  max-width: 426px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-self: center;
+}
+
+.slider__text-title {
+  text-align: center;
+}
+
+.slider__text-header {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36.48px;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+}
+
+.slider__text-item {
+    text-align: left;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 97.52px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.slider__img img {
+  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.slider__row{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.slider__row-slider {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+.slider__row-item {
+  display: flex;
+  gap: 20px;
+}
+
+.slider__buttons {
+  height: 56px;
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+}
+
+.slider_buttons-item:hover {
+  cursor: pointer;
+}
+
+.slider_buttons-item {
+  width: 56px;
+  height: 56px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  line-height: 68px;
+  text-align: center;
+}
+
+
