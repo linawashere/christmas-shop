@@ -530,6 +530,11 @@ body {
   color: #181c29;
 }
 
+.cta__block-btn:hover a,
+.hero__btn:hover a{
+  color: var(--dark);
+}
+
 .cta__block-btn a{
   color: #ffffff;
   text-decoration: none;
