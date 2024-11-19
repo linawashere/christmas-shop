@@ -520,6 +520,12 @@ body {
   max-width: 250px;
   width: auto;
   margin: 0;
+  transition: 0.7s ease;
+}
+
+.cta__block-btn:hover {
+  background-color: #ffffff;
+  color: #181c29;
 }
 
 .cta__block-btn a{
