@@ -259,6 +259,7 @@ body {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
+  transition: 0.7s ease;
 }
 
 .about {
@@ -523,7 +524,8 @@ body {
   transition: 0.7s ease;
 }
 
-.cta__block-btn:hover {
+.cta__block-btn:hover,
+.hero__btn-link:hover{
   background-color: #ffffff;
   color: #181c29;
 }
