@@ -249,6 +249,7 @@ body {
   padding: 20px 32px;
   border-radius: 20px;
   border: none;
+  transition: 0.7s ease;
 }
 
 .hero__btn-link {
@@ -259,7 +260,6 @@ body {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
-  transition: 0.7s ease;
 }
 
 .about {
@@ -525,7 +525,7 @@ body {
 }
 
 .cta__block-btn:hover,
-.hero__btn-link:hover{
+.hero__btn:hover{
   background-color: #ffffff;
   color: #181c29;
 }
