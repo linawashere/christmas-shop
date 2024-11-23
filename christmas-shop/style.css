@@ -91,6 +91,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 article,
 aside,
 details,
@@ -104,17 +105,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -122,6 +127,7 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -231,6 +237,10 @@ body {
 .header__item.active .header__link {
   transition: 0.5s;
   color: var(--primary);
+}
+
+.burger-cont {
+  display: none;
 }
 
 .hero {
@@ -795,4 +805,99 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 12px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .header,
+  .hero,
+  .about,
+  .slider,
+  .best-gifts,
+  .cta,
+  .footer,
+  .gifts {
+    width: 768px;
+    padding: 60px 8px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header {
+    padding: 0px 8px;
+  }
+
+  .burger-cont {
+    display: flex;
+  }
+
+  .burger-cont__burger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .burger-cont__burger-item {
+    width: 20px;
+    height: 1px;
+    background-color: var(--dark);
+  }
+
+  .hero {
+    padding: 60px 8px;
+  }
+
+  .about__text,
+  .about__img {
+    width: 376px;
+  }
+
+  .about__text-container {
+    max-width: 436px;
+    width: 256px;
+  }
+
+  .about__img {
+    height: 528px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .about__img img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .slider__container {
+    padding-left: 0;
+  }
+
+  .slider__buttons {
+    margin-right: 0;
+  }
+
+  .best-gifts{
+    max-height: none;
+  }
+
+  .best-gifts__cards{
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 12px;
+    column-gap: 12px;
+    align-self: end;
+  }
+
+  .best-gifts__cards-item, .gifts__cards-item{
+    margin-right: 0;
+  }
+  
 }
