@@ -885,19 +885,46 @@ body {
     margin-right: 0;
   }
 
-  .best-gifts{
+  .best-gifts {
     max-height: none;
   }
 
-  .best-gifts__cards{
+  .best-gifts__cards {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 12px;
     column-gap: 12px;
     align-self: end;
   }
 
-  .best-gifts__cards-item, .gifts__cards-item{
+  .best-gifts__cards-item,
+  .gifts__cards-item {
     margin-right: 0;
   }
-  
+
+  .cta {
+    background-size: cover;
+  }
+
+  .footer__contacts {
+    flex-direction: column;
+    height: 636px;
+    width: 100%;
+  }
+
+  .footer__bottom{
+    width: 100%;
+  }
+
+  .footer__bottom,
+  .footer__bottom-social {
+    align-items: center;
+  }
+
+  .footer__bottom-paragraph {
+    height: 24px;
+  }
+
+  .footer__bottom-social {
+    height: 40px;
+  }
 }
