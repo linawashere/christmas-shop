@@ -153,12 +153,14 @@ body {
   color: var(--dark);
   background-image: url(img/bg-snow.png);
   background-repeat: repeat-y;
+  transition: transform 0.4s ease;
 }
 
 .header {
   background: #ffffff;
   height: 64px;
-  width: 1440px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .wrapper {
@@ -210,19 +212,10 @@ body {
   border-radius: 12px;
 }
 
-.header__item:hover,
-.active {
-  background: rgba(255, 70, 70, 0.1);
-}
-
 .active {
   pointer-events: none;
   color: var(--primary);
-}
-
-.header__item:hover .header__link {
-  transition: 0.5s;
-  color: var(--primary);
+  background-color: #ff464633;
 }
 
 .header__link {
@@ -243,8 +236,40 @@ body {
   display: none;
 }
 
+.burger__link {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.burger__menu-item {
+  border-radius: 12px;
+  padding: 12px 20px;
+}
+
+.item1,
+.item2 {
+  transition: transform 0.5s ease;
+}
+
+.burger__menu {
+  opacity: 0;
+  width: 100%;
+  height: 110vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  transform: translateX(100%);
+  z-index: 3;
+  transition: transform 0.5s ease;
+}
+
 .hero {
-  width: 1440px;
+  max-width: 1440px;
   height: 524px;
   background-color: var(--primary);
   background-image: url(img/bg-snow.png), url(img/bg-ball.png);
@@ -320,17 +345,11 @@ body {
   text-align: center;
 }
 
-.hero__btn:hover,
-.cta__block-btn:hover {
-  background-color: #ffffff;
-  color: var(--dark);
-}
-
 .about {
   padding: 60px 0px;
   background-color: var(--primary);
   background-image: url(img/bg-snow.png);
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -364,7 +383,8 @@ body {
 .best-gifts__text-header,
 .cta__block-header,
 .cta__timer-digit,
-.footer__contacts-title {
+.footer__contacts-title,
+.burger__menu-item {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 24px;
@@ -373,9 +393,14 @@ body {
 }
 
 .about__text-descr,
-.footer__bottom-paragraph {
-  line-height: 23.68px;
+.footer__bottom-paragraph,
+.gifts__cards-descr {
+  line-height: 20px;
   font-weight: 400;
+}
+
+.gifts__cards-descr {
+  font-size: 14px;
 }
 
 .about__img {
@@ -392,7 +417,7 @@ body {
   padding: 60px 8px;
   position: relative;
   overflow: hidden;
-  width: 1440px;
+  max-width: 1440px;
   background-color: var(--primary);
   background-image: url(img/bg-snow.png);
   margin: 0 auto;
@@ -463,16 +488,13 @@ body {
 }
 
 .slider__buttons {
+  max-width: 1276px;
+  width: 1276px;
   height: 56px;
   display: flex;
   gap: 20px;
   justify-content: end;
-  margin-right: -82px;
-}
-
-.slider_buttons-item:hover {
-  background: #ffffff33;
-  cursor: pointer;
+  /* margin-right: -82px; */
 }
 
 .slider_buttons-item {
@@ -484,9 +506,13 @@ body {
   text-align: center;
 }
 
+.slider_buttons-item img {
+  user-select: none;
+}
+
 .best-gifts {
-  width: 1440px;
-  max-height: 554px;
+  max-width: 1440px;
+  /*   max-height: 554px; */
   padding: 60px 0px;
   background-color: var(--primary);
   background-image: url(img/bg-snow.png);
@@ -515,8 +541,16 @@ body {
 }
 
 .best-gifts__cards {
-  display: inline-grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 4fr));
+  grid-auto-rows: 342px;
+  justify-content: center; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
 }
 
 .best-gifts__cards-item,
@@ -525,16 +559,11 @@ body {
   height: 342px;
   border-radius: 20px;
   background: #ecf3f8;
-  margin-right: 12px;
+  /* margin-right: 12px; */
   display: flex;
   flex-direction: column;
   transition: 0.5s ease;
   cursor: pointer;
-}
-
-.best-gifts__cards-item:hover,
-.gifts__cards-item:hover {
-  color: var(--primary);
 }
 
 .best-gifts__cards-image img,
@@ -550,7 +579,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   flex-grow: 1;
   height: 60px;
   overflow: hidden;
@@ -560,7 +589,8 @@ body {
 .cta__timer-descr,
 .gifts__tabs-item,
 .gifts__cards-title,
-.header__logo-span {
+.header__logo-span,
+.gifts__bottom-title {
   font-weight: 600;
   font-size: 12px;
   line-height: 15.6px;
@@ -590,7 +620,7 @@ body {
 }
 
 .cta {
-  width: 1440px;
+  max-width: 1440px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 60px 8px;
@@ -665,9 +695,10 @@ body {
 }
 
 .footer {
-  width: 1440px;
+  max-width: 1440px;
   background: #ffffff;
   padding: 60px 8px;
+  margin: 0 auto;
 }
 
 .footer__container {
@@ -732,10 +763,6 @@ body {
   transition: 0.5s ease;
 }
 
-.footer__bottom-title:hover {
-  color: var(--primary);
-}
-
 .footer-card {
   flex: 1;
   display: flex;
@@ -754,13 +781,8 @@ body {
   transition: 0.5s ease;
 }
 
-.footer-card:hover .footer__contacts-title,
-.footer-card:hover .footer__contacts-header {
-  color: var(--primary);
-}
-
 .gifts {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   border-radius: 20px;
   background-color: var(--primary);
@@ -795,46 +817,322 @@ body {
   cursor: pointer;
 }
 
-.gifts__tabs-item:hover {
-  background: #ffffff33;
-}
-
 .active-tab {
   pointer-events: none;
   background: #ffffff33;
 }
 
 .gifts__cards {
-  width: 1276px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 12px;
+  /* width: 1276px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
 }
 
-@media screen and (max-width: 768px) {
+.gifts-modal{
+  max-width: 400px;
+  border-radius: 20px;
+  background-color: #ECF3F8;
+}
+
+.gifts-modal__img{
+  height: 230px;
+}
+
+.gifts-modal__descr{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.gifts-modal__descr-top,
+.gifts-modal__descr-bottom{
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.gifts__cards-superpowers{
+  display: flex;
+  gap: 12px;
+}
+
+.button-up {
+  opacity: 0;
+  background-color: #fff;
+  width: 56px;
+  height: 56px;
+  border-radius: 100px;
+  border: 1px var(--primary) solid;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-up__line {
+  width: 1px;
+  height: 14px;
+  background-color: var(--primary);
+}
+
+.button-up__line::after {
+  content: '';
+  width: 1px;
+  height: 5px;
+  display: block;
+  background-color: var(--primary);
+  transform: rotate(45deg);
+  position: absolute;
+  right: calc(50% - -1px);
+}
+
+.button-up__line::before {
+  content: '';
+  width: 1px;
+  height: 5px;
+  display: block;
+  background-color: var(--primary);
+  transform: rotate(-45deg);
+  position: absolute;
+  right: calc(50% - 3px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .hero__btn:hover,
+  .cta__block-btn:hover {
+    background-color: #ffffff;
+    color: var(--dark);
+  }
+
+  .header__item:hover,
+  .active {
+    background: rgba(255, 70, 70, 0.1);
+  }
+
+  .header__item:hover .header__link {
+    transition: 0.5s;
+    color: var(--primary);
+  }
+
+  .slider_buttons-item:hover {
+    background: #ffffff33;
+    cursor: pointer;
+  }
+
+  .best-gifts__cards-item:hover,
+  .gifts__cards-item:hover {
+    color: var(--primary);
+  }
+
+  .footer__bottom-title:hover {
+    color: var(--primary);
+  }
+
+  .gifts__tabs-item:hover {
+    background: #ffffff33;
+  }
+
+  .footer-card:hover .footer__contacts-title,
+  .footer-card:hover .footer__contacts-header {
+    color: var(--primary);
+  }
+}
+
+@media screen and (max-width: 767px) {
 
   .header,
   .hero,
   .about,
   .slider,
+  .slider__buttons,
   .best-gifts,
   .cta,
   .footer,
   .gifts {
-    width: 768px;
+    width: 100vw;
     padding: 60px 8px;
+  }
+
+  .header {
+    padding: 0 8px;
+    margin: 0 auto;
+  }
+
+  .burger-cont__burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+
+  .burger-cont__burger-item {
+    width: 20px;
+    height: 1px;
+    background-color: var(--dark);
+  }
+
+  .wrapper {
+    max-width: 364px;
+  }
+
+  .hero {
+    height: 572px;
+  }
+
+  .hero__container {
+    height: 452px;
+  }
+
+  .hero__header {
+    width: 100%;
+  }
+
+  .about__text {
+    padding: 0;
+  }
+
+  .about__container {
+    flex-direction: column;
+  }
+
+  .about__text-container {
+    width: 100%;
+    padding: 60px 20px;
+  }
+
+  .about__img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .slider__container {
+    padding-left: 0;
+  }
+
+  .slider__buttons {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .about__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .best-gifts {
+    max-height: none;
+  }
+
+  /* .best-gifts__cards,
+  .gifts__cards {
+    grid-template-columns: 100%;
+    justify-items: center;
+    align-self: auto;
+    row-gap: 12px;
+  } */
+
+  .best-gifts__cards-item,
+  .gifts__cards-item {
+    margin-right: 0;
+  }
+
+  .gifts__text-header {
+    width: 100%;
+    height: 240px;
+  }
+
+  .gifts__tabs {
+    width: 100vw;
+  }
+
+  .gifts__tabs-list {
+    max-width: 100vw;
+    gap: 4px;
+    justify-content: space-around;
+  }
+
+  .gifts__tabs-item {
+    padding: 0;
+    font-size: 10px;
+  }
+
+  .gifts__cards-descr {
+    font-size: 12px;
+  }
+
+  .cta {
+    background-size: cover;
+  }
+
+  .footer {
+    margin: 0 auto;
+  }
+
+  .footer__contacts {
+    flex-direction: column;
+  }
+
+  .gifts__tabs-list {
+    width: 354px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .active-tab {
+    height: 100%;
+    padding: 12px 8px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .burger-cont {
+    display: flex;
   }
 
   .header__nav {
     display: none;
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+  .header,
+  .hero,
+  .about,
+  .slider,
+  .slider__buttons,
+  .best-gifts,
+  .cta,
+  .footer,
+  .gifts {
+    max-width: 768px;
+    padding: 60px 8px;
+  }
+
+  .wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+  }
 
   .header {
     padding: 0px 8px;
-  }
-
-  .burger-cont {
-    display: flex;
+    margin: 0 auto;
   }
 
   .burger-cont__burger {
@@ -845,6 +1143,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    position: relative;
   }
 
   .burger-cont__burger-item {
@@ -886,7 +1185,13 @@ body {
   }
 
   .slider__buttons {
+    width: 100%;
     margin-right: 0;
+  }
+
+  .gifts__container,
+  .header__wrapper {
+    max-width: none;
   }
 
   .best-gifts,
@@ -894,13 +1199,13 @@ body {
     max-height: none;
   }
 
-  .best-gifts__cards,
+  /* .best-gifts__cards,
   .gifts__cards {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 12px;
     column-gap: 12px;
-    align-self: end;
-  }
+    align-self: end; 
+  } */
 
   .best-gifts__cards-item,
   .gifts__cards-item {
@@ -909,6 +1214,10 @@ body {
 
   .cta {
     background-size: cover;
+  }
+
+  .footer {
+    margin: 0 auto;
   }
 
   .footer__contacts {
@@ -937,77 +1246,8 @@ body {
   .gifts__cards {
     width: 100%;
   }
-}
 
-@media screen and (max-width: 380px) {
-
-  .header,
-  .hero,
-  .about,
-  .slider,
-  .best-gifts,
-  .cta,
-  .footer,
-  .gifts {
-    width: 380px;
-    padding: 60px 8px;
-  }
-
-  .header {
-    padding: 0 8px;
-  }
-
-  .wrapper {
-    max-width: 364px;
-  }
-
-  .hero {
-    height: 572px;
-  }
-
-  .hero__container {
-    height: 452px;
-  }
-
-  .hero__header {
-    width: 100%;
-  }
-
-  .about__text {
-    padding: 0;
-  }
-
-  .about__container {
-    flex-direction: column;
-  }
-
-  .about__text-container {
-    width: 100%;
-    padding: 60px 20px;
-  }
-
-  .about__img {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .best-gifts__cards,
-  .gifts__cards {
-    grid-template-columns: 100%;
-    justify-items: center;
-    align-self: auto;
-  }
-
-  .gifts__text-header {
-    width: 100%;
-    height: 240px;
-  }
-
-  .gifts__tabs-list {
-    gap: 12px 8px;
-  }
-
-  .gifts__tabs-item{
-    padding: 0;
+  .end {
+    justify-self: end;
   }
 }

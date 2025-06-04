@@ -6,7 +6,7 @@ const items = document.querySelectorAll('.slider__row-item');
 let currentIndex = 0;
 
 function updateItem() {
-    const offset = -currentIndex * 250;
+    const offset = -currentIndex * 430;
     sliderWrapper.style.transform = `translateX(${offset}px)`;
 }
 
