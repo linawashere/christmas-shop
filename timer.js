@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const minutes = document.querySelector('.cta__minutes');
     const seconds = document.querySelector('.cta__seconds');
 
-    const newYear = new Date('2026-01-01T00:00:00Z');
+    const newYear = new Date('2027-01-01T00:00:00Z');
 
     function updateTime() {
         const now = new Date();
